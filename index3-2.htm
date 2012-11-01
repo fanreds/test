@@ -1,0 +1,169 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {alert(nazwa);
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+   <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Przykładowy program przedstawiający podstawowe operacje.
+   <p class="akapit">
+   Kolejne zadanie to operacje na plikach. Zaczniemy od zmiany nazwy wybranego pliku.
+       &nbsp;<a href="obrazki/37.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+       <ul style="list-style-type:none"><a href="#kodle8 false" onclick="PokazAkapit('kodle8');" class="linkkod">KOD</a>
+   <li id="kodle8" style="display:none;">Dim a, s, pa, ps As String         <br />
+        Dim FSO As Object                       <br />
+        FSO = CreateObject("Scripting.FileSystemObject")<br />
+        If File1.SelectedItem Is Nothing Then                 <br />
+            MsgBox("Nie wybrano pliku!!!", MsgBoxStyle.Critical, "Okno komunikatu")<br />
+        Else                   <br />
+            s = File1.SelectedItem    <br />
+            a = InputBox("", "Podaj nową nazwę", s)<br />
+            If Len(a) = 0 Or a = s Then                  <br />
+                'anulowano                                     <br />
+            Else                                                     <br />
+                ps = File1.Path & "\" & s                                  <br />
+                pa = File1.Path & "\" & a           <br />
+                FSO.movefile(ps, pa)                      <br />
+            End If                                              <br />
+        End If                                                        <br />
+        File1.Refresh()</li></ul>                                           <br />
+   Tutaj podobnie jak wcześniej występuje tworzenie obiektu, który umożliwia dokonywania podstawowych operacji
+   na katalogach i plikach (FSO = CreateObject("Scripting.FileSystemObject")). Po nacisnieciu przycisku pojawia
+   się okienko z aktualną nazwą. Po potwierdzeniu operacji polecenie (FSO.movefile(ps, pa)) dokona zmieny nazwy. <br /><br />
+    <hr>
+   Następnym zadaniem będzie wykonanie usuwania danego pliku. Dodajemy kod do procedury kliknięcia na przycisk.
+   &nbsp;<a href="obrazki/38.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+   <ul style="list-style-type:none"><a href="#kodle9 false" onclick="PokazAkapit('kodle9');" class="linkkod">KOD</a>
+   <li id="kodle9" style="display:none;">Dim p, s, ps As String                                  <br />
+        If File1.SelectedItem Is Nothing Then                        <br />
+            MsgBox("Nie wybrano pliku!!!", MsgBoxStyle.Critical, "Okno komunikatu")<br />
+        Else                                                   <br />
+            s = File1.SelectedItem                                   <br />
+            ps = File1.Path & "\" & s                                      <br />
+            p = MsgBox("Czy napewno usunac plik", MsgBoxStyle.OKCancel, "Pytanie")<br />
+            If p = 1 Then                  <br />
+                Kill(ps)                         <br />
+            Else                                       <br />
+                File1.Refresh()                              <br />
+            End If                                                 <br />
+            File1.Refresh()                                              <br />
+        End If</li></ul>                                                       <br />
+     Po wybraniu pliku do usunięcia pojawia się okienko z pytaniem 'Czy napewno usunąć plik'. Gdy potwierdzimy
+     usuniecie plik zostanie usunięty (Kill(ps)), a FileListBox odświeżony (File1.Refresh()).<br /><br />
+     <hr>
+     Kolejny przycisk będzie sprawdzał rozmiar pliku.
+     &nbsp;<a href="obrazki/39.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+     <ul style="list-style-type:none"><a href="#kodle10 false" onclick="PokazAkapit('kodle10');" class="linkkod">KOD</a>
+   <li id="kodle10" style="display:none;">Dim p, s, ps As String                                     <br />
+        If File1.SelectedItem Is Nothing Then                           <br />
+            MsgBox("Nie wybrano pliku!!!", MsgBoxStyle.Critical, "Okno komunikatu")<br />
+        Else                           <br />
+            s = File1.SelectedItem           <br />
+            ps = File1.Path & "\" & s              <br />
+            Dim roz As Double                            <br />
+            roz = FileLen(ps)                                  <br />
+            roz = roz / 1024                                         <br />
+            If roz > 1024 Then                                             <br />
+                roz = roz / 1024                                                 <br />
+                MsgBox(Math.Round(roz, 2) & " MB", MsgBoxStyle.Information, ps)        <br />
+            Else                                                                             <br />
+                MsgBox(Math.Round(roz, 2) & " KB", MsgBoxStyle.Information, ps)                    <br />
+            End If                                                          <br />
+            File1.Refresh()                                                       <br />
+        End If</li></ul>                                                                <br />
+   Kod ten również sprawdza rozmiar, ale pliku,  za pomocą funkcji FileLen(). Reszta bardzo się nie różni.
+   Pojawia sie informacja z rozmiarem w kB lub MB.<br /><br />
+    <hr>
+   Kolejny przycisk będzie umożliwiał zapis zawartości katalogu do pliku. Należy w bloku deklaracji zaimportować
+   klasy umożliwiające wykorzystanie strumienia do zapisu danych.
+   &nbsp;<a href="obrazki/40.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a> <br />
+   Po zaimportowaniu danych bibliotek wpisujemy kod w procedurze utworzonej po podwójnym kliknięciu.
+   &nbsp;<a href="obrazki/41.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a> <br />
+    <ul style="list-style-type:none"><a href="#kodle11 false" onclick="PokazAkapit('kodle11');" class="linkkod">KOD</a>
+   <li id="kodle11" style="display:none;">SaveFileDialog1.Filter = "Text Files|*.txt"   <br />
+        ' Specify default filter                           <br />
+        SaveFileDialog1.FilterIndex = 1                          <br />
+        Dim I As Long                                                  <br />
+        If SaveFileDialog1.ShowDialog() = DialogResult.OK Then               <br />
+            Dim oWriter As New StreamWriter(SaveFileDialog1.FileName)   <br />
+            oWriter.WriteLine("Zawartosc folderu " & File1.Path)              <br />
+            For I = 0 To File1.Items.Count - 1                                      <br />
+                oWriter.WriteLine(File1.Items(I))                   <br />
+            Next I                                                        <br />
+            oWriter.Close()                                                     <br />
+        End If</li></ul>                                                              <br />
+    Używamy kontrolki SaveFileDialog, aby podać miejsce zapisu oraz nazwę tworzonego pliku. Do zapisu używamy ze
+    strumienia StreamWriter, zapisując linia po linii przy pomocy pętli for.<br /><br />
+    <hr>
+<center><a href="index3-1.htm">  Wstecz</a>      <a href="index3-3.htm"> Dalej</a></center>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

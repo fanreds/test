@@ -1,0 +1,184 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+   <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Przykładowy program przedstawiający podstawowe operacje.
+   <p class="akapit">
+   Poruszanie się po dysku jest zrobione wiec kolejną rzeczą do wykonania będzie tworzenie, usuwanie katalogów, plików
+    sprawdzanie rozmiaru itp. <br />
+    Wcześniej jeszcze dodamy możliwość wyświetlenia plików o danym rozszerzeniu.
+    Wystarczy dopisać jedną linijkę kodu... (kliknij podwójnie na Button1)
+    &nbsp;<a href="obrazki/33.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+
+    <ul style="list-style-type:none"><a href="#kodle4 false" onclick="PokazAkapit('kodle4');" class="linkkod">KOD</a>
+   <li id="kodle4" style="display:none;">File1.Pattern = Text1.Text</li></ul>
+    FileListBox pobiera dane rozszerzenie po wciśnięciu przycisku.       <br /><br />
+   <hr>
+    Dodajemy kod dla przycisków wykonujących operacje na katalogach. Na początek dodajemy procedurę dla Mkdir1
+    (podwójne klikniecie na przycisku) i wpisujemy kod, który utworzy folder w wybranym miejscu.
+    &nbsp;<a href="obrazki/34.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+    <ul style="list-style-type:none"><a href="#kodle5 false" onclick="PokazAkapit('kodle5');" class="linkkod">KOD</a>
+   <li id="kodle5" style="display:none;">Dim p, s, z As String                                          <br />
+        s = InputBox("Podaj nazwę nowego katalogu", "Okno komunikatu", "Nowy folder")  <br />
+        p = Dir1.Path                                     <br />
+        Dim FSO As Object                                       <br />
+        FSO = CreateObject("Scripting.FileSystemObject")              <br />
+        If Len(s) = 0 Then                                                  <br />
+            z = "Anulowano"                                                       <br />
+        Else                                                                            <br />
+            p = p & "\" & s                                 <br />
+            If (FSO.FolderExists(p)) Then                         <br />
+                MsgBox("Katalog o podanej nazwie istnieje")             <br />
+            Else                                                              <br />
+                MkDir(p)                                                            <br />
+            End If                                                                        <br />
+        End If                                                               <br />
+        Dir1.Refresh()</li></ul>                                                   <br />
+
+   Po wciśnięciu przycisku wyskakuje okienko gdzie należy wpisać nazwę tworzonego folderu. Gdy potwierdzono założenie   folderu, instrukcja warunkowa sprawdza czy istnieje już taki sam katalog, dzięki temu program nie wyrzuci błąd.  <br /><br />
+   <hr>
+   Kolejny przycisk to Usuwanie katalogu. Wpisujemy kod dla przycisku.
+   &nbsp;<a href="obrazki/35.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+   <ul style="list-style-type:none"><a href="#kodle6 false" onclick="PokazAkapit('kodle6');" class="linkkod">KOD</a>
+   <li id="kodle6" style="display:none;">Dim p, s, ps As String                            <br />
+        Dim ofile, subfol, subf, files, z, FSO As Object       <br />
+        FSO = CreateObject("Scripting.FileSystemObject")             <br />
+        s = Dir1.SelectedItem                                              <br />
+        ps = Dir1.Path & "\" & s                                                 <br />
+        If ps Is Nothing Then                                                          <br />
+            MsgBox("Nie wybrano folderu!!!", MsgBoxStyle.Critical, "Okno komunikatu")        <br />
+        Else                                                                                       <br />
+            If (FSO.FolderExists(ps)) Then
+                p = MsgBox("Czy napewno usunac folder", MsgBoxStyle.OKCancel, "Pytanie")  <br />
+                If p = 1 Then                                                                   <br />
+                    z = FSO.getfolder(ps)                                                             <br />
+                    subf = z.subfolders                                                                     <br />
+                    For Each subfol In subf 'usuwanie plików w podkatalogach jeśli jest w tych podkatalogach kolejny katalog występuje błąd <br />
+                        For Each ofile In subfol.files<br />
+                            ofile.delete()                  <br />
+                        Next                                      <br />
+                        subfol.delete()                                 <br />
+                    Next                                                      <br />
+                    For Each files In z.files 'usuwanie plików      <br />
+                        files.delete()                                    <br />
+                    Next                                                        <br />
+                    RmDir(ps)                                                         <br />
+                Else                                                   <br />
+                    Dir1.Refresh()                                           <br />
+                End If                                                             <br />
+                Dir1.Refresh()                                                           <br />
+            Else                                                                               <br />
+                MsgBox("Nie można usunąć!!!", MsgBoxStyle.Critical, "Komunikat")                     <br />
+            End If                                                                                         <br />
+        End If</li></ul>                                                         <br />
+
+    Aby usunąć folder należy go wcześniej zaznaczyć w DirListBoxie. Gdy potwierdzimy usuniecie katalog zostanie
+    usunięty. Gdy w danym katalogu znajdują się pliki i katalogi, a w nich kolejne pliki to operacja usunięcia zakończy
+    się sukcesem. Lecz gdy w podkatalogach znajdują się jakieś kolejne katalogi z plikami program wyrzuci błąd.
+    <br /><br />
+     <hr>
+    Ostatnią operacją dotyczącą katalogów będzie sprawdzenie rozmiaru katalogu. Wpisujemy kod.
+    &nbsp;<a href="obrazki/36.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a>
+    <ul style="list-style-type:none"><a href="#kodle7 false" onclick="PokazAkapit('kodle7');" class="linkkod">KOD</a>
+   <li id="kodle7" style="display:none;">Dim folder, FSO As Object                   <br />
+        FSO = CreateObject("Scripting.FileSystemObject") <br />
+        Dim p, s, ps As String                                 <br />
+        Dim i As Double                                              <br />
+        If Dir1.SelectedItem Is Nothing Then                               <br />
+            MsgBox("Nie wybrano folderu!!!", MsgBoxStyle.Critical, "Okno komunikatu")<br />
+        Else                      <br />
+            s = Dir1.SelectedItem       <br />
+            ps = Dir1.Path & "\" & s          <br />
+            If FSO.FolderExists(ps) Then            <br />
+                folder = FSO.getfolder(ps)                <br />
+                i = folder.size / 1024                          <br />
+                If i > 1024 Then                                      <br />
+                    i = i / 1024                                            <br />
+                    MsgBox(Math.Round(i, 2) & " MB", MsgBoxStyle.Information, ps) <br />
+                Else                                                                    <br />
+                    MsgBox(Math.Round(i, 2) & " KB", MsgBoxStyle.Information, ps)             <br />
+                End If                                                                     <br />
+            Else                                                                                 <br />
+                MsgBox("Nie można sprawdzic rozmiaru!!!", MsgBoxStyle.Critical, "Komunikat")           <br />
+            End If                                                                <br />
+        End If</li></ul>                                                                <br />
+
+       Naciśniecie przycisku powoduje wyświetlenie rozmiaru w nowym okienku. Pierwsza pętla sprawdza czy zaznaczony
+       zostal folder, druga czy katalog istnieje, natomiast kolejna czy wynik podąć w kB czy MB. Rozmiar
+       zapisywany jest do zmiennej rzeczywistej typu Double i na koniec zaokrąglona za pomocą funkcji
+       matematycznej Math.Round(rozmiar,ilosc_miejsc_po_przecinku).<br /><br />
+ <center><a href="index3.htm">  Wstecz</a>      <a href="index3-2.htm"> Dalej</a></center>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

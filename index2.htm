@@ -1,0 +1,139 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+   <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Przykładowy program przedstawiający podstawowe operacje.
+   <p class="akapit">
+   Pierwszym krokiem jest zaplanowanie interfejsu i funkcjonalności programu. Kiedy to uczynimy możemy uruchomić
+   Microsoft Visual Studio .NET 2003. Tworzymy <a href="obrazki/1.jpg" target="_blank">nowy projekt</a>, podajemy lokalizacje
+   i nazwę projektu. Pojawi się <a href="obrazki/2.jpg" target="_blank">formatka</a> gdzie należy umieszczać kontrolki
+   z Toolboxa. Jednak nie wszystkie kontrolki użyte w programie znajdują się w Toolboxie.
+   Ręcznie trzeba dodać kontrolki: DriveListBox, DirListBox, FileListBox i AxWindowsMediaPlayer.
+   Z Menu wybierz Tools\(Add/Remove Toolbox Item...) &nbsp;<a href="obrazki/3.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a>
+   <br /><br />W okienku, które się pojawi, w zakładce.NET Framework Components znajdujemy DriveListBox, DirListBox, FileListBox
+   i je zaznaczamy potwierdzając OK &nbsp;<a href="obrazki/4.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a>
+   <br /><br />Podobnie dodajemy kontrolkę WindowsMediaPlayer tylko ona znajduje sie w zakładce COM Components
+   &nbsp;<a href="obrazki/18.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a>
+
+
+   <br /><br />
+   Elementy wykorzystane w programie:     <br />
+   <ul style="list-style-type:circle;"><p style="font-size:20px">a) buttony   </p> <br />
+   <li>Button1 - służy do odświeżenia FileListBox po wpisaniu rozszerzenia w TextBox</li>
+   <li>Mkdir1 - służy do utworzenia nowego folderu</li>
+   <li>Del1 - usuwa zaznaczony folder</li>
+   <li>Fsize - podaje rozmiar zaznaczonego folderu &nbsp;<a href="obrazki/15.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a></li></li>
+   <li>Name1 - służy do zmiany nazwy zaznaczonego pliku</li>
+   <li>Usun1 - usuwa zaznaczony plik</li>
+   <li>Size1 - sprawdza rozmiar zaznaczonego pliku</li>
+   <li>Save1 - pozwala na zapisanie do pliku zawartości folderu</li>
+   <li>CDS - służy do wysunięcia cd-romu</li>
+   <li>CD2 - służy do wsunięcia cd-romu</li>
+   <li>Wmplay - odtwarza zaznaczony plik dźwiękowy</li>
+   </ul>
+
+   <ul style="list-style-type:circle;"><p style="font-size:20px">b) etykiety   </p> <br />
+   <li>Label1 - napis 'Ścieżka' &nbsp;<a href="obrazki/11.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a></li>
+   <li>Label2 - służy do podania lokalizacji aktualnie zaznaczonego pliku</li>
+   <li>Label3 - informacja 'Wpisz rozszerzenie, aby uzyskać określone pliki'</li>
+   <li>Label4 - wyświetlana data i godzina
+   <li>Label5 - podaje lokalizacje wybranego obrazka</li>
+   <li>Label6 - napis Podgląd obrazków</li>
+   </ul>
+
+   <ul style="list-style-type:circle;"><p style="font-size:20px">c) ramki grupujące   </p> <br />
+   <li>GroupBox1 - oddziela elementy służące do zmiany rozszerzenia wyświetlanych plików</li>
+   <li>GroupBox2 - oddziela przyciski służące do operacji na plikach</li>
+   <li>GroupBox3 - oddziela przyciski służące do operacji na katalogach</li>
+   <li>GroupBox4 - oddziela przyciski służące do wysuwania i wsuwania cd-romu</li>
+   </ul>
+
+
+   <ul style="list-style-type:circle;"><p style="font-size:20px">d) pozostałe elementy   </p> <br />
+   <li>Drive1 - (DriveListBox) pozwala przejść na inną partycje</li>
+   <li>Dir1 - (DirListBox) pozwala przechodzić przez foldery</li>
+   <li>File1 - (FileListBox) wyświetla pliku z danego katalogu &nbsp;&nbsp;<a href="obrazki/6.jpg" target="_blank"><img src="lupa.png" class="obramow" /></a> </li>
+   <li>Text1 - (TextBox) w tym miejscu wpisujemy rozszerzenie plików do wyświetlenia &nbsp;<a href="obrazki/13.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a></li>
+   <li>PB - (PictureBox) służy do wyświetlenia obrazka &nbsp;<a href="obrazki/17.jpg" target="_blank"><img src="lupa.png" class="obramow" width="22" height="22" /></a></li></li></li>
+   <li>AxWindowsMediaPlayer1 - wtyczka wmp do odtwarzania muzyki &nbsp;<a href="obrazki/19.jpg" target="_blank"><img src="lupa.png" class="obramow" class="obramow" width="22" height="22" /></a></li></li></li></li>
+   <li>SaveFileDialog1 - okienko służące do zapisywania zawartości katalogu</li>
+   <li>Timer1 - pozwala na dynamiczne wyświetlanie godziny</li>
+   </ul>
+
+   Po dodaniu tych wszystkich kontrolek program wygląda tak &nbsp;&nbsp;<a href="obrazki/22.jpg" target="_blank"><img src="lupa.png" class="obramow" /></a>
+  <hr>
+<a href="index3.htm">  Dalej</a>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

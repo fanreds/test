@@ -1,0 +1,176 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+ <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Podstawy Visual Basic
+   <p class="akapit">
+
+e)	Pętle w Visual Basic    <br /><br />
+	For  <br />
+Przed pierwsza iteracja pętli for wykonywana jest inicjalizacja. Na początku każdej iteracji sprawdzany jest
+ warunek czy pocz jest mniejszy od kon, gdy warunek  jest prawdziwy wykonywane są instrukcje. Zmienna jest
+  zwiększana o wartość  krok po wykonaniu Next zmienna.       <br /><br />
+
+<span style="color:yellow">For zmienna = pocz To kon Step krok     <br />
+Instrukcje                                                         <br />
+Next zmienna     </span>                                                 <br /><br />
+
+Przykład     <br />
+<span style="color:yellow">Dim koniec As Byte <br />
+Dim i As Byte            <br />
+For i = 0 To 9 Step 1          <br />
+MsgBox i                             <br />
+Next i               </span>                      <br />   <br />
+
+Aby wcześniej zakończyć działanie pętli można użyć Exit For. <br /><br />
+	Do While    <br />
+Warunek może być dowolnym wyrażeniem logicznym. Gdy warunek spełniony  wykonywane są instrukcje aż do
+napotkania Loop.  <br /><br />
+<span style="color:yellow">Do While warunek  <br />
+Instrukcje powtarzane                    <br />
+Loop      </span>                              <br /><br />
+
+Przykład  <br />
+<span style="color:yellow">a = 0    <br />
+Do While (a < 20)              <br />
+a = a + 1                            <br />
+Msgbox("Pętla działa " & a & " raz")       <br />
+Loop     </span>                     <br /><br />
+
+Pętla wykonywana jest tak  długo dopóki warunek jest prawdziwy. Może się zdarzyć, ze pętla nie zostanie ani
+raz wykonana. Aby pętla chociaż raz została wykonana musi mieć postać:        <br />
+<span style="color:yellow">Do  <br />
+Instrukcje powtarzane                <br />
+Loop While warunek    </span>              <br /><br />
+
+Przykład   <br />
+<span style="color:yellow">Do          <br />
+komunikat = "Podaj liczbę od 24 do 2354"     <br />
+licznik = licznik + 1                              <br />
+Loop While licznik = 12   </span>                        <br /><br />
+
+	Do Until    <br />
+<span style="color:yellow">Do Until (warunek)     <br />
+Instrukcje                                              <br />
+Loop         </span>                                          <br /><br />
+
+
+
+Przykład:  <br />
+<span style="color:yellow">Do Until liczba <= 15       <br />
+komunikat = "Wprowadzona liczba jest większa niż 15"         <br />
+Loop        </span>                              <br /><br />
+
+Pętla rożni się tym od Do While, ze wykonywane są instrukcje, gdy warunek jest fałszywy.<br /><br />
+
+
+<span style="color:yellow">Do <br />
+Instrukcje                          <br />
+Loop Until   </span>                      <br /><br />
+
+
+Przykład: <br />
+<span style="color:yellow">Do   <br />
+komunikat = "Wpisz liczbę mniejszą niż 24"<br />
+Loop Until liczba = 26  </span>                 <br /><br />
+
+
+Instrukcje są wywoływane do momentu spełnienia warunku. Zawsze jest wykonywana
+przynajmniej jeden raz.    <br />  <br />
+
+
+	Do         <br />
+<span style="color:yellow">Do  <br />
+Instrukcje                           <br />
+Loop   </span>                             <br /><br />
+
+
+
+Wykonywana do czasu natrafienia na instrukcję Exit lub naciśnięcia klawiszy
+CTRL+BREAK.    <br />
+
+Przykład:     <br />
+<span style="color:yellow">Do          <br />
+komunikat = "Podaj liczbę od 24 do 2354"     <br />
+licznik = licznik + 1                              <br />
+if licznik = 13 then                                     <br />
+Exit Do                                                        <br />
+End if                                     <br />
+Loop While licznik = 12   </span>                <br /><br />
+
+Aby wcześniej zakończyć działanie pętli używamy Exit Do.  <br />   <hr>
+<center><a href="index-p4a.htm">  Wstecz</a>      <a href="index-p4c.htm"> Dalej</a></center>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

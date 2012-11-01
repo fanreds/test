@@ -1,0 +1,188 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+   <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Podstawy Visual Basic
+   <p class="akapit">
+d)	Instrukcja warunkowa   <br />
+Instrukcje warunkowe służą do sterowania pracą programu. Określają kolejne instrukcje na podstawie prawdziwości lub fałszywości wyrażenia warunkowego.
+Wyróżniamy trzy postacie instrukcji If. <br /><br />
+
+If <br />
+<span style="color:yellow">If (warunek) Then     <br />
+Instrukcje                                             <br />
+EndIf </span>                                      <br /><br />
+
+W instrukcji If sprawdzany jest warunek, gdy jest on prawdziwy wykonywane są instrukcje. Jeśli warunek nie
+zostanie spełniony instrukcje nie zostaną wykonane.  <br /><br />
+
+If Else      <br />
+
+<span style="color:yellow">If (warunek) Then    <br />
+Instrukcje1                                           <br />
+Else                                                        <br />
+Instrukcje2                                                       <br />
+EndIf    </span>                                     <br /><br />
+
+To jest bardziej rozbudowana instrukcja If, w przypadku gdy warunek nie zostanie spełniony wykonają się
+Instrukcje2. EndIf stosowany jest do zakończenia instrukcji warunkowej If. <br /><br />
+Przykład   <br />
+<span style="color:yellow">Wiek=14      <br />
+If (Wiek > 15) Then                           <br />
+b = 15                                              <br />
+Else                               <br />
+b = 14                                   <br />
+EndIf      </span>                    <br />   <p></p>
+
+<span style="color:yellow">If ((Wiek > 15) AND (Imie = "Jan")) Then    <br />
+b = 2              <br />
+Else                     <br />
+b = 1                          <br />
+End If    </span>                    <br /><br />
+
+If ElseIf     <br />
+<span style="color:yellow">If Warunek1 Then   <br />
+Blok instrukcji        <br />
+ElseIf Warunek2 Then         <br />
+Blok instrukcji                    <br />
+ElseIf Warunek3 Then                     <br />
+Blok instrukcji            <br />
+Else                             <br />
+Blok instrukcji                        <br />
+End If   </span>                             <br /><br />
+Pozwala na sprawdzanie wielu warunków oprócz .W przypadku spełnienia warunku określonego po nim zostaną
+ sprawdzone wszystkie warunki po kolejnych słowach ElseIf. Wykonany może być jednak tylko jeden blok instrukcji,
+  występujący po odpowiadającym mu słowie If, ElseIf lub Else. Sprawdzanych warunków może być wiele.<br /><br />
+
+
+Przykład:  <br />
+<span style="color:yellow">If Zmienna = 5 Then <br />
+komunikat = MsgBox("Wprowadzona liczba to 5!!!")<br />
+ElseIf Zmienna = 10 Then                              <br />
+komunikat = MsgBox("Wprowadzona liczba to 10!!!")           <br />
+ElseIf Zmienna = 12 Then                          <br />
+komunikat = MsgBox("Wprowadzona liczba to 12!!!")       <br />
+Else                                                          <br />
+komunikat = MsgBox("Wprowadzona liczba nie jest mi znana!!!")       <br />
+End If         </span>                                                           <br /><br />
+Do zdefiniowania warunków wykorzystywane są operatory logiczne i porównania.    <br /> <br />
+b)	Instrukcja wyboru                                            <br />
+Instrukcja Select Case nazywana jest instrukcją wielokrotnego wyboru.      <br /><br />
+<span style="color:yellow">Select Case wyrażenie    <br />
+Case test1                     <br />
+Instrukcje1                          <br />
+Case test2                                 <br />
+Instrukcje2                                      <br />
+...............                                        <br />
+Case Else               <br />
+Instrukcjen                   <br />
+End Select             </span>             <br /><br />
+
+Na podstawie wyrażenia instrukcja wybiera odpowiedni fragment kodu. Wyrażenie zwraca wartość całkowitą.
+Instrukcja ta sprawdza wynik wyrażenia z każdą ze stałych test1,test2 itd., jeśli nie znajdzie żadnego
+przypadku zgodnego z wyrażeniem zostanie wykonane to co znajduje się po Case Else. Użycie Case Else jest opcjonalne.
+<br />W przypadku Select Case mamy 2 dodatkowe opcje.     <br /><br />
+Case Is Relacja1      <br />
+Case Wartość1a To Wartość1  <br /><br />
+Case Is może używać tylko relacji. Jest szczególnie przydatna, gdy trzeba zdecydować, którą z wielu możliwości
+wybrać.  <br /><br />
+Case To używa tylko przedziałów. Możemy sprawdzić do którego przedziału wyrażenie należy, jeśli się
+znajdzie taki przedział wykonać odpowiedni blok kodu.<br /><br />
+Przykład:          <br />
+<span style="color:yellow">Select Case wiek         <br />
+Case 7                         <br />
+a = 1                                <br />
+Exit                                       <br />
+Case sqr(11)                                     <br />
+a = 2                           <br />
+Exit                                  <br />
+Case 2 To 10                                <br />
+a = 3                                             <br />
+Exit                                                    <br />
+Case "A" To "Z"                                               <br />
+a = 4                           <br />
+Exit                                  <br />
+Case "15"                                   <br />
+a = 5                                             <br />
+Exit                                                    <br />
+Case wiek > 6                                                 <br />
+a = 6                                                               <br />
+Exit                           <br />
+Case Else                            <br />
+a = 7                                      <br />
+End Select                    </span>                   <br /><br />      <hr>
+<center><a href="index-p4.htm">  Wstecz</a>      <a href="index-p4b.htm"> Dalej</a></center>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

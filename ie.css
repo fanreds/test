@@ -1,0 +1,164 @@
+<html>
+<style type="text/css">
+<!--
+
+body {
+	background-image: url(tlotopa.gif);
+	font-family: Tahoma;
+}
+.lista{
+	list-style-type: none;
+	margin-top: 1px;
+	display: block; 
+	background-color: transparent;
+	color: White;
+}
+
+ul#menu li:hover ul{
+		display: block;
+}
+#menu{
+	
+}
+.lista a:hover{
+	list-style-image: url(str2.png);
+	color: Yellow;
+	background-color: #999AFF;
+	margin-left: 0px;
+}
+.linki{
+	text-decoration: none;
+	letter-spacing: 1px;
+	color: White;
+	margin-left: 1px;
+	background-image: url(sm.jpg);
+	width: 150px;
+	height: 30px;
+	display: block;
+	text-indent: -5px;
+	text-align: center;
+	vertical-align: bottom;
+	font-family: Haettenschweiler;
+	font-size: 25px;
+}
+.linki2{
+	text-decoration: none;
+	letter-spacing: 1px;
+	color: White;
+	background-image: url(sm.jpg);
+	width: 150px;
+	height: 30px;
+	display: block;
+	text-indent: -5px;
+	text-align: center;
+	vertical-align: bottom;
+	font-family: Haettenschweiler;
+	font-size: 25px;
+}
+#blok-menul{
+	width: 200px;
+	border: 0px solid black;
+	float: left;
+}
+div#shake{
+	width: 802px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-right: 3px;
+}
+ul#menu li ul{
+	display: none;
+}
+ul#w1 li ul{
+	display: none;
+}
+ul#w1 li:hover ul{
+	display: block;
+}
+#menuroz{
+	position:absolute;
+	margin-left: 108px;
+	top: 308px;
+	display: none;
+	background-color: transparent;
+}
+#menuroz2{
+	position: absolute;
+	margin-left: 108px;
+	top: 339px;
+	display: none;
+	background-color: transparent;
+}
+.pasek{
+	height: 35px;
+	width: 989px;
+	display: block;
+}
+.bm1{
+	background-image: url(pasek.jpg);
+	width: 200px;
+	height: 35px;
+	display: block;
+	float: left;
+	position: static;
+	border: 1px solid black;
+	text-align: center;
+	font-family: Haettenschweiler;
+	font-size: 25px;
+}
+div.menupoz{
+	/*margin-left: 70px;*/
+	width: 800px;
+	border-left: 1px;
+	border-right: 1px;
+}
+div.bm1:hover{
+	background-image: url(pasek-po.jpg);
+}
+a{
+	color: White;
+}
+div{
+	padding:0px;
+    margin:0px;
+}
+#news{
+	width: 510px;
+	border-left: 1px solid white;
+	float: right;
+	margin-right: 0px;
+}
+.akapit{
+	/*background-color: #F2F2F2;*/
+	font-family: Consolas;
+	
+}
+a{
+	color: White;
+	border: 0px white solid;
+}
+.obramow{
+	border: 0;
+}
+.linkkod{
+	color: White;
+}
+li{
+	background-color: White;
+	font-family: Tahoma;
+	color: Black;
+	margin-right: 70px;
+	padding-left: 5px;
+}
+div{
+	color: White;
+}
+ul{
+	font-family: Tahoma;
+}
+
+-->
+</style>
+</html>

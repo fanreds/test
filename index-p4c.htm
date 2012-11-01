@@ -1,0 +1,119 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+  <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Podstawy Visual Basic
+   <p class="akapit">
+
+Tablica to zmienna, która przechowuje zbiór lub sekwencje wartości. Tablica może posiadać wiele elementów,
+a każdy z nich może przechowywać pojedyncza wartość, taką jak tekst bądź liczby, lub tez inną zmienną.
+Daje to pewne ułatwienie, bo jeśli potrzeba przechować większą ilość wartości, to wystarczy umieścić je w tablicy przy pomocy indeksów, a nie deklarować dla każdej wartości zmienne.
+Deklaracja tablic wygląda tak jak w przypadku zmiennych.   <br /><br />
+<span style="color:yellow">Dim Tablica(19) As Integer  </span><br /><br />
+
+Tylko w nawiasie należy wpisać rozmiar tablicy. Powyżej jest to tablica która może zmieścić 20 elementów,
+pomimo iż wpisana wartość to 19 gdyż elementy liczone sa od 0.
+Aby zmienić początkowy indeks od którego zaczyna się tablica, należy przed deklaracją dopisać Option Base
+wartość_poczatkowa.  <b></b>
+Innym sposobem jest wpisanie zakresu tablicy <br />
+<span style="color:yellow">Dim Tablica(100 To 202) As Integer</span><br /><br />
+
+Inicjalizacja tablicy podczas jej deklarowania(konstruktor niejawny)<br />
+<span style="color:yellow">Dim Tablica(5) As Integer= {1,2,4,5,7}   </span><br /><br />
+
+Inicjalizacja tablicy podczas jej deklarowania(konstruktor jawny)  <br />
+<span style="color:yellow">Dim Tablica() As Integer = New Integer(6) {1, 2, 3, 4, 5, 6, 7}</span><br /><br />
+
+Przypisanie elementom tablicy wartości za pomocą pętli for:  <br />
+<span style="color:yellow">For zmienna =1 To 10 <br />
+Tablica(zmienna-1)=zmienna                            <br />
+Next zmienna  </span>                                       <br /><br />
+
+Tablice dynamiczne - używana gdy nie jest znany programiście rozmiar tablicy. <br />
+<span style="color:yellow">Dim Tablica() As Integer   </span><br /><br />
+Ustawienie rozmiaru dokonujemy za pomocą polecenia ReDim, ale jeżeli tablica będzie posiadała jakieś wartości
+zostaną usunięte, aby temu zapobiec używamy polecenia Preserve  <br /><br />
+
+<span style="color:yellow">ReDim Preserve Tablica(10)  </span><br /><br />
+
+Tablice wielowymiarowe- każda pozycja tablicy może przechowywać inną tablicę.
+W ten sposób można utworzyć tablice dwuwymiarową, traktowanej jako macierz bądź siatkę posiadającą
+szerokość i wysokość, czyli rzędy i kolumny. <br />  <br />
+Deklaracja i inicjalizacja tablicy dwuwymiarowej:    <br />
+<span style="color:yellow">Dim rectArray(,) As Integer = {{1, 2, 3}, {4, 5, 6}}</span><br />
+<hr>
+<a href="index-p4b.htm">  Wstecz</a>
+   </p></div>
+
+          </div>
+</body>
+</html>
+

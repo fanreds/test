@@ -1,0 +1,156 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+  <meta name="Description" content="[ Opis dokumentu ]" />
+  <meta name="Author" content="[ Autor dokumentu ]" />
+  <meta name="Generator" content="EdHTML" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+  <title>Tutorial VB by kleX</title>
+     <!-- Nasz kod Javascript: -->
+ <script type="text/javascript">
+    function PokazAkapit(nazwa)
+    {
+    var akapit = document.getElementById(nazwa);
+    var view = akapit.style.display;
+    if (view == "block")
+    {
+    akapit.style.display = "none";
+    }
+    if (view == "none")
+    {
+    akapit.style.display = "block";
+    }
+    licz();
+    }
+    function licz()
+    {
+        var element = document.getElementById('news').offsetHeight;
+        var element2 = document.getElementById('shake');
+        element2.style.height = element;
+    }
+ </script>
+</head>
+<body style="background-image: url(tlotopa.gif);font-family:Consolas;color:white" onload="licz();">
+     <div id="divlog" style="width:800px;margin:auto;border:1px solid white;border-bottom:0px;">
+   <div><img src="pasek.jpg" style="pasek" width="800px" height="35px" /></div>
+   <div><img src="logo3.jpg" width="800" height="180" border="0" /></div>
+
+   <div class="menupoz">
+   <a href="index.htm"><div class="bm1" valign="middle">Główna</div></a>
+   <a href="index-p4.htm"><div class="bm1" valign="middle">Podstawy VB</div></a>
+   <a href="index2.htm"><div class="bm1" valign="middle">Tutorial</div></a>
+   <a href="index-st.htm"><div class="bm1" valign="middle">Stopka</div></a>
+   </div>
+   </div>
+
+  <div id="shake" style="border:1px solid white;">
+   <div id="blok-menul">
+   <ul id="menu">
+<li class="lista"> <a class="linki" href="index.htm"><span style="margin-left:-5px;">Główna</span></a></li>
+<li class="lista">   <a class="linki" href="index-p4.htm"><span style="margin-left:20px;">Podstawy</span>   </a>
+<ul id="menuroz" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index-p4.htm"><span style="margin-left:20px;">Zmienne</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4a.htm"><span style="margin-left:20px;">Instrukcje</span></a></li>
+<li class="tloli"><a class="linki2" href="index-p4b.htm"><span style="margin-left:20px;">Pętle</span> </a></li>
+<li class="tloli"><a class="linki2" href="index-p4c.htm"><span style="margin-left:20px;">Tablice</span></a></li>
+</ul> </li>
+<li class="lista">   <a class="linki" href="index2.htm"><span style="margin-left:0px;">Tutorial</span>  </a>
+<ul id="menuroz2" style="list-style-type:none;">
+<li class="tloli"><a class="linki2" href="index2.htm"><span style="margin-left:20px;">Plan</span> </a></li>
+<li class="tloli"><a class="linki2" href="index3.htm"><span style="margin-left:20px;">cz. I</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-1.htm"><span style="margin-left:20px;">cz. II</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-2.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+<li class="tloli"><a class="linki2" href="index3-3.htm"><span style="margin-left:20px;">cz. III</span></a></li>
+</ul> </li>
+<li class="lista">  <a class="linki" href="index-st.htm"><span style="margin-left:-5px;">Stopka</span>    </a> </li>
+</ul>
+   </div>
+   
+   
+   <div id="news" style="padding:4px;">Podstawy Visual Basic
+   <p class="akapit">
+    a)	Zmienne     <br />
+Zmienna to miejsce w pamięci, gdzie przechowywane są pewne wartości. Wielkość zmiennej określa jej typ. Można ja zamieniać, odczytywać i zapisywać.
+        <br /><br />
+Własności zmiennych:             <br />
+	Nazwa - identyfikator zmiennej w kodzie  <br />
+	Adres - miejsce gdzie jest przechowywana w pamięci<br />
+	Typ danych- zakres możliwych wartości<br />
+	Wartość - zawartość zmiennej<br />
+	Czas życia - czas w którym zmienna będzie istnieć w programie<br />
+	Zakres - miejsca programu, w których dana zmienna będzie widoczna z perspektywy kodu źródłowego.<br /> <br />
+Nazwa zmiennej:<br />
+	musi mieć od 1 do 40 znaków,<br />
+	musi zaczynać się od litery,<br />
+	musi zawierać tylko litery, liczby i znaki podkreślenia(_),<br />
+	nie może być słowem kluczowym Visual Basic.<br /><br />
+Deklaracja zmiennych ma na celu związanie jej nazwy z określonym typem danych. W przypadku zmiennych nieobiektowych
+ (typów wartościowych) deklaracja jest równoznaczna z utworzeniem egzemplarza danej zmiennej.   <br /><br />
+ Przykładowo, deklaracja w postaci:  <br />
+<span style="color:yellow">Dim createMeNow As Integer </span>                <br />
+tworzy zmienną typu Integer nazwaną createMeNow. Powyższa deklaracja jest równoważna poniższemu wyrażeniu:<br />
+<span style="color:yellow">Dim createMeNow As Integer = New Integer</span><br />
+lub nawet wyrażeniu w postaci:                <br />
+<span style="color:yellow">Dim createMeNow As New Integer   </span>                   <br />
+w którym położono nacisk na sam fakt tworzenia nowego egzemplarza obiektu zmiennej.<br />   <br />
+
+Przykłady:    <br />
+<span style="color:yellow">Dim stan as Boolean</span> - typ logiczny<br />
+<span style="color:yellow">Dim zmienna as Long</span> - typ całkowity długi<br />
+Po zadeklarowaniu możemy z niej korzystać<br />
+np.  stan=true<br />
+<br />
+
+Zmienne lokalne - to zmienne zadeklarowane wewnątrz funkcji, procedur lub właściwości. Korzystać z tej zmiennej
+ możemy tylko w odrębie danej funkcji itd. Zmienna przestaje istnieć kiedy wykonane zostaną funkcje, procedury
+ lub właściwości. Co więcej, zmienna zdefiniowana wewnątrz bloku kodu charakteryzuje się zakresem na poziomie
+  bloku i jako taka jest widoczna tylko w ramach tego bloku. Ponieważ bloki kodu mogą być zagnieżdżane,
+   zmienne lokalne definiowane na poziomie tych bloków mogą występować dowolnie głęboko w hierarchii tego
+    rodzaju zagnieżdżeń.
+<br /><br />
+b)	Komentarze  <br />
+W języku Visual Basic komentarze są oznaczone w inny sposób niż w C++.
+Komentarz jednowierszowy w C++ -> // , w Visual Basic -> ' (apostrof).<br />
+Przykład:                 <br />
+<span style="color:yellow">'licznik      </span>                  <br />
+<span style="color:yellow">Dim i as Integer     </span>                 <br />    <br />
+
+c)	Typy danych     <br />
+W technologii .NET typy danych mają postać specjalnych klas i struktur, których egzemplarze
+reprezentują wartości danych należące do ograniczonych przedziałów (właściwych dla poszczególnych typów).
+Okazuje się, że podstawowe typy danych oferują bardzo szeroki zakres funkcjonalności
+i pozwalają zarządzać niemal wszystkimi kategoriami danych.  <br /><br />
+
+Dane logiczne   <br />
+Pojedynczy typ danych, który obejmuje tylko jeden bit reprezentujący prawdę lub fałsz
+(odpowiednio True lub False). <br /><br />
+
+Dane znakowe         <br />
+Visual Basic oferuje typy danych zarządzające zarówno pojedynczymi znakami, jak i długimi
+łańcuchami znaków.    <br /><br />
+
+Dane czasu i daty     <br />
+Pojedynczy typ danych zarządzający wartościami reprezentującymi zarówno datę, jak
+i godzinę.       <br /><br />
+
+Dane zmiennoprzecinkowe      <br />
+Rozmaite typy danych reprezentujące wartości zmiennoprzecinkowe - każdy z tych typów
+zarządza ograniczonym podzbiorem liczb wymiernych. Niektóre z tych typów oferują większą
+precyzję matematyczną od pozostałych.<br /><br />
+
+Dane całkowitoliczbowe<br />
+Ta kategoria obejmuje wiele całkowitoliczbowych typów danych, które umożliwiają składowanie liczb całkowitych
+należących do właściwego (zależnego od typu) przedziału (od wartości minimalnej do maksymalnej).
+Część typów danych całkowitoliczbowych obsługuje wartości ujemne.   <br />
+<hr>
+<a href="index-p4a.htm">  Dalej</a>
+
+   </p></div>
+
+          </div>
+</body>
+</html>
+
